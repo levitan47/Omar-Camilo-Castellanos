@@ -29,7 +29,12 @@ var M3=0;
 var MF=0;
 var cod=0;
 var i;
+var x;
 var j;
+var z;
+var v;
+var m;
+var n;
 var Ntalent= 0;
 
 
@@ -41,21 +46,33 @@ for(i=0;cod!=13;i++){
 
     switch(cod){
     case 1:
-       Ntalent=parseInt(prompt("Ingrese la cantidad de talentos a los que va a registrar"));
 
-        if(Ntalent>0){
-            console.log(Ntalent)
-            Talentos.length=Ntalent
-            
-        }else{
-            alert("Por favor ingrese un valor mayor a 0");
-        }
+    
+ if(Ntalent==0){
+    Ntalent=parseInt(prompt("Ingrese la cantidad de talentos a los que va a registrar"));
+    if(Ntalent>0){
+        console.log(Ntalent)
+        Talentos.length=Ntalent
+        
+    }else{
+        alert("Por favor ingrese un valor mayor a 0");
+    }
+ } else{
+    alert("Ya hay un valor definido");
+ }
+       
+
+    
 
         break;
     case 2:
+        if(Ntalent!=0){
+
         var Codig;
         var Nom;
         var i;
+
+        for(x=0; x<Ntalent ;x++){
 
         Codig=prompt("Porfavor ingrese el codigo del talento");
         Nom=prompt("Porfavor ingrese el nombre del talento");
@@ -65,10 +82,16 @@ for(i=0;cod!=13;i++){
             }else{
                 alert("El codigo ingresado ya esta registrado");
             }
+        }
+
+    }else{
+        alert("Aun no se han definido los estudiantes");
+    }
 
         break;
     case 3:
-                
+
+        if(Ntalent!=0){
 
             M1=parseInt(prompt("Por favor, ingrese la nota que el estudiante saco en la Mision 1"));
 
@@ -77,10 +100,13 @@ for(i=0;cod!=13;i++){
                 }else{
                     alert("Por favor ingrese un valor mayor a 0 y menos que 100");
                 }
-            
+        }else{
+            alert("Aun no se han definido los estudiantes");
+        }
         
         break;
     case 4:
+        if(Ntalent!=0){
 
                 M2=parseInt(prompt("Por favor, ingrese la nota que el estudiante saco en la Mision 2"));
 
@@ -91,10 +117,13 @@ for(i=0;cod!=13;i++){
                 }
 
         
-
+            }else{
+                alert("Aun no se han definido los estudiantes");
+            }
         
         break;
     case 5:
+        if(Ntalent!=0){
 
                 M3=parseInt(prompt("Por favor, ingrese la nota que el estudiante saco en la Mision 3"));
 
@@ -104,8 +133,15 @@ for(i=0;cod!=13;i++){
                         alert("Por favor ingrese un valor mayor a 0 y menos que 100");
                     }
 
+                }else{
+                    alert("Aun no se han definido los estudiantes");
+                }
+
         break;
     case 6:
+
+    if(Ntalent!=0){
+        
         MF=parseInt(prompt("Por favor, ingrese la nota que el estudiante saco en la Mision 3"));
 
                 if(0>MF<100){
@@ -115,13 +151,16 @@ for(i=0;cod!=13;i++){
                     }
                     console.log(Talentos)
                 
-
+                }else{
+                    alert("Aun no se han definido los estudiantes");
+                }
         break;
     case 7:
-        for(j=0; j<Talentos.length ;j++){
-        console.log(j);
-        console.log("El Talento con mejor nota se llama: " + Talentos[j]["Nombre"] + " Con una nota de: " + Math.max(Talentos[j]["Ms1"]));
+        for(z=0; z<Talentos.length ;z++){
+        console.log(z);
+        console.log("El Talento con mejor nota se llama: " + Talentos[z]["Nombre"] + " Con una nota de: " + Math.max(Talentos[z]["Ms1"]));
         }
+        
       
 
         break;
@@ -135,9 +174,9 @@ for(i=0;cod!=13;i++){
         break;
     case 9:
 
-        for(j=0; j<Talentos.length ;j++){
-            console.log(j);
-            console.log("El Talento con mejor nota se llama: " + Talentos[j]["Nombre"] + " Con una nota de: " + Math.max(Talentos[j]["Ms3"]));
+        for(v=0; v<Talentos.length ;v++){
+            console.log(v);
+            console.log("El Talento con mejor nota se llama: " + Talentos[v]["Nombre"] + " Con una nota de: " + Math.max(Talentos[v]["Ms3"]));
             }
 
         break;
@@ -145,19 +184,19 @@ for(i=0;cod!=13;i++){
              let suma=0;
              let prom=0;
 
-        for(j=0; j<Talentos.length ;j++){
+        for(m=0; m<Talentos.length ;m++){
 
-            suma = Talentos[j]["Ms1"] + Talentos[j]["Ms2"] + Talentos[j]["Ms3"] + Talentos[j]["MsF"];
+            suma = Talentos[m]["Ms1"] + Talentos[m]["Ms2"] + Talentos[m]["Ms3"] + Talentos[m]["MsF"];
             prom=suma/4;
             console.log(prom);
-            console.log("El Talento con mejor nota se llama: " + Talentos[j]["Nombre"] + " Con una nota de: " + prom);
+            console.log("El Talento con mejor nota se llama: " + Talentos[m]["Nombre"] + " Con una nota de: " + prom);
             }
 
         break;
     case 11:
-        for(j=0; j<Talentos.length ;j++){
+        for(n=0; n<Talentos.length ;n++){
 
-        console.log("El nombre del estudiante es: "+ Talentos[j]["Nombre"] + " y sus notas son: nota1=" + Talentos[j]["Ms1"] + " Nota2=" + Talentos[j]["Ms2"] + " Nota3=" +Talentos[j]["Ms3"] + " Nota final=" + Talentos[j]["MsF"]);
+        console.log("El nombre del estudiante es: "+ Talentos[n]["Nombre"] + " y sus notas son: nota1=" + Talentos[n]["Ms1"] + " Nota2=" + Talentos[n]["Ms2"] + " Nota3=" +Talentos[n]["Ms3"] + " Nota final=" + Talentos[n]["MsF"]);
     }
         break;
     case 12:
